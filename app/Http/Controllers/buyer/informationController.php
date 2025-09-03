@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
-class informationController extends Controller
+class InformationController extends Controller
 {
         public function create()
     {

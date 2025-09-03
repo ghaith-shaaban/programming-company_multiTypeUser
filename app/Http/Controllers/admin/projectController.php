@@ -9,7 +9,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class projectController extends Controller
+class ProjectController extends Controller
 {
     public function index(){
         $projects=project::paginate(5);

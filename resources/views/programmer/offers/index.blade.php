@@ -24,7 +24,7 @@
                             <tr>
                                 <th>title</th>
                                 <th>description</th>
-                                <th>prise</th>
+                                <th>price</th>
                                 <th>edit</th>
                                 <th>delete</th>
                             </tr>
@@ -32,7 +32,7 @@
                                 <tr>
                                     <td>{{$offer['title']}}</td>
                                     <td>{{$offer['description']}}</td>
-                                    <td>{{$offer['prise']}}</td>
+                                    <td>{{$offer['price']}}</td>
                                     {{-- <td><img width="75" height="75" src="{{url('storage/'.$team['image'])}}"></td>
                                     <td>
                                         @foreach ( $service->teams as $team )

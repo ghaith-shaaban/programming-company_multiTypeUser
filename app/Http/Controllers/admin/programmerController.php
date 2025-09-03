@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
 
-class programmerController extends Controller
+class ProgrammerController extends Controller
 {     public function index(){
         $users=User::where('role',2)->paginate(5)->withQuerystring();
         return view('admin.programmer.index',compact(['users']));

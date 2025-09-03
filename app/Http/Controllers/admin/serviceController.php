@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class serviceController extends Controller
+class ServiceController extends Controller
 {
     public function index(){
         $services=service::paginate(5);

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
 
-class buyerController extends Controller
+class BuyerController extends Controller
 {
         public function index(){
         $users=User::where('role',1)->paginate(5)->withQuerystring();

@@ -30,7 +30,7 @@
                                     <option value="title" {{request('type',old('type'))=='title'?'selected':''}}>title</option>
                                     <option value="description" {{request('type',old('type'))=='description'?'selected':''}}>description</option>
                                     <option value="buyer_id" {{request('type',old('type'))=='buyer_id'?'selected':''}}>buyer</option>
-                                    <option value="prise" {{request('type',old('type'))=='prise'?'selected':''}}>prise</option>
+                                    <option value="price" {{request('type',old('type'))=='price'?'selected':''}}>price</option>
                                 </select>
                                 <div style="color:red">
                                     @error('type')
@@ -38,7 +38,7 @@
                                     @enderror
                                 </div>
 
-                                <label for="search" class="block">search ('if you choose prise then that mean less than')</label>
+                                <label for="search" class="block">search ('if you choose price then that mean less than')</label>
                                 <input name="search" value ="{{request('search',old('search'))}}" placeholder="..."
                                  class="form-control mb-3 w-25" type="text"id="search">
                                 <div style="color:red">
@@ -55,7 +55,7 @@
                             <tr>
                                 <th>title</th>
                                 <th>description</th>
-                                <th>prise</th>
+                                <th>price</th>
                                 <th>buyer</th>
                                 {{-- <th>#</th> --}}
                             </tr>
@@ -64,7 +64,7 @@
                                 <tr>
                                     <td>{{$request['title']}}</td>
                                     <td>{{$request['description']}}</td>
-                                    <td>{{$request['prise']}}</td>
+                                    <td>{{$request['price']}}</td>
                                     <th>{{$buyer->user->name}}</th>
                                     {{-- <td><img width="75" height="75" src="{{url('storage/'.$team['image'])}}"></td>
                                     <td>

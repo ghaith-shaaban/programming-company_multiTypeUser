@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
-class offerController extends Controller
+class OfferController extends Controller
 {
     public function index(){
         if(Gate::allows('buyerInfo'))
@@ -25,10 +25,10 @@ class offerController extends Controller
             else
             {
                 $validated=request()->validate([
-                'type'=>['required',Rule::in(['title','description','programmer_id','prise'])],
+                'type'=>['required',Rule::in(['title','description','programmer_id','price'])],
                 ]);
 
-                if($validated['type']=='prise')
+                if($validated['type']=='price')
                 {  $validated2=request()->validate(['search'=>'required|integer|numeric|gt:0']);
                     $offers=offer::latest()->where($validated['type'],'<=',$validated2['search'])->paginate(5)->withQuerystring();
                 }
@@ -85,10 +85,10 @@ class offerController extends Controller
             else
             {
                 $validated=request()->validate([
-                'type'=>['required',Rule::in(['title','description','programmer_id','prise'])],
+                'type'=>['required',Rule::in(['title','description','programmer_id','price'])],
                 ]);
 
-                if($validated['type']=='prise')
+                if($validated['type']=='price')
                 {  $validated2=request()->validate(['search'=>'required|integer|numeric|gt:0']);
                     $offers=Auth::user()->buyer->offers()->latest()->where($validated['type'],'<=',$validated2['search'])->paginate(5)->withQuerystring();
                 }

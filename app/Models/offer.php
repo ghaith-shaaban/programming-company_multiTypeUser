@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class offer extends Model
+class Offer extends Model
 {
    protected $fillable = [
             'programmer_id',
             'title',
-            'prise',
+            'price',
             'description'
         ];
 

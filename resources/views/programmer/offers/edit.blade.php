@@ -19,7 +19,7 @@
                         <table class="table table-hover table-responsive">
                             <tr>
                                 <th>title</th>
-                                <th>prise</th>
+                                <th>price</th>
                                 <th>description</th>
                                 <th>save</th>
 
@@ -37,9 +37,9 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <input type="text" name="prise" value="{{$offer['prise']}}" >
+                                        <input type="text" name="price" value="{{$offer['price']}}" >
                                         <div style="color:red">
-                                            @error('prise')
+                                            @error('price')
                                             {{$message}}
                                             @enderror
                                         </div>

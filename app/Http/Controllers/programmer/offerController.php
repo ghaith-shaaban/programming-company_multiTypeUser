@@ -42,7 +42,7 @@ class offerController extends Controller
         $validated=request()->validate([
             'title'=>'min:2|required',
             'description'=>'min:2|required',
-            'prise'=>'required|integer|numeric|gt:0'
+            'price'=>'required|integer|numeric|gt:0'
         ]);
 
         $validated['programmer_id']=Auth::user()->programmer['id'];
@@ -69,7 +69,7 @@ class offerController extends Controller
         $validated=request()->validate([
             'title'=>'min:2|required',
             'description'=>'min:2|required',
-            'prise'=>'required|integer|numeric|gt:0'
+            'price'=>'required|integer|numeric|gt:0'
         ]);
 
         $offer->update($validated);
@@ -79,6 +79,9 @@ class offerController extends Controller
     }
 
     public function destroy(offer $offer){
+
+        if($offer->programmer_id!==Auth::user()->programmer->id)
+        {abort(403,'unauthorized action.');}
 
         $offer->delete();
         return redirect()->route('programmer.offers.index')
@@ -97,10 +100,10 @@ class offerController extends Controller
             else
             {
                 $validated=request()->validate([
-                'type'=>['required',Rule::in(['title','description','buyer_id','prise'])],
+                'type'=>['required',Rule::in(['title','description','buyer_id','price'])],
                 ]);
 
-                if($validated['type']=='prise')
+                if($validated['type']=='price')
                 {  $validated2=request()->validate(['search'=>'required|integer|numeric|gt:0']);
                      $requests=offer::where('programmer_id',Auth::user()->programmer['id'])->has('buyers')
                      ->where($validated['type'],'<=',$validated2['search'])->paginate(5)->withQuerystring();

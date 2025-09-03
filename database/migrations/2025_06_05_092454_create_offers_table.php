@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->foreignId('programmer_id')->constrained()->cascadeOnDelete();
-            $table->integer('prise');
+            $table->integer('price');
             $table->string('description');
             $table->timestamps();
         });
