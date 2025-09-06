@@ -32,7 +32,7 @@
                                     @csrf
                                     <td>
                                         <input type="text" name="title" value="{{old('title')}}" >
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('title')
                                             {{$message}}
                                             @enderror
@@ -40,7 +40,7 @@
                                     </td>
                                     <td>
                                         <textarea cols="25" rows="5" name="content">{{old('content')}}</textarea>
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('content')
                                             {{$message}}
                                             @enderror
@@ -53,7 +53,7 @@
                                         <option value="branding" {{old('type')=='branding'?'selected':''}}>branding</option>
                                         <option value="product" {{old('type')=='product'?'selected':''}}>product</option>
                                         </select>
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('type')
                                             {{$message}}
                                             @enderror
@@ -61,7 +61,7 @@
                                     </td>
                                     <td>
                                         <input type="file" name="image">
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('image')
                                             {{$message}}
                                             @enderror

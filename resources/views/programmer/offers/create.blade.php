@@ -31,7 +31,7 @@
                                     @csrf
                                     <td>
                                         <input type="text" name="title" value="{{old('title')}}" >
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('title')
                                             {{$message}}
                                             @enderror
@@ -39,7 +39,7 @@
                                     </td>
                                     <td>
                                         <input type="text" name="price" value="{{old('price')}}" >
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('price')
                                             {{$message}}
                                             @enderror
@@ -47,7 +47,7 @@
                                     </td>
                                     <td>
                                         <textarea cols="20" rows="5" name="description">{{old('description')}}</textarea>
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('description')
                                             {{$message}}
                                             @enderror
@@ -55,7 +55,7 @@
                                     </td>
                                     {{-- <td>
                                         <input type="file" name="image">
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('image')
                                             {{$message}}
                                             @enderror

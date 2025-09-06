@@ -31,7 +31,7 @@
                                     @method('PUT')
                                     <td>
                                         <input type="text" name="name" value="{{$team['name']}}" >
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('name')
                                             {{$message}}
                                             @enderror
@@ -39,7 +39,7 @@
                                     </td>
                                     <td>
                                         <input type="text" name="jobDescription" value="{{$team['jobDescription']}}" >
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('jobDescription')
                                             {{$message}}
                                             @enderror
@@ -47,7 +47,7 @@
                                     </td>
                                     <td>
                                         <textarea cols="20" rows="5" name="bio">{{$team['bio']}}</textarea>
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('bio')
                                             {{$message}}
                                             @enderror
@@ -56,7 +56,7 @@
                                     <td>
                                         <img width="75" height="75" src="{{url('storage/'.$team['image'])}}"><br>
                                         <input type="file" value="{{$team['image']}}" name="image">
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('image')
                                             {{$message}}
                                             @enderror

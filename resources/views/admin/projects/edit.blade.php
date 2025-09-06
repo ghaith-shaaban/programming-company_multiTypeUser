@@ -31,7 +31,7 @@
                                     @method('PUT')
                                     <td>
                                         <input type="text" name="title" value="{{$project['title']}}" >
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('title')
                                             {{$message}}
                                             @enderror
@@ -39,7 +39,7 @@
                                     </td>
                                     <td>
                                         <textarea cols="35" rows="5" name="content">{{$project['content']}}</textarea>
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('content')
                                             {{$message}}
                                             @enderror
@@ -51,7 +51,7 @@
                                         <option value="branding" {{$project['type']=='branding'?'selected':''}}>branding</option>
                                         <option value="product" {{$project['type']=='product'?'selected':''}}>product</option>
                                         </select>
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('type')
                                             {{$message}}
                                             @enderror
@@ -60,7 +60,7 @@
                                     <td>
                                         <img width="75" height="75" src="{{url('storage/'.$project['image'])}}"><br>
                                         <input type="file" value="{{$project['image']}}" name="image">
-                                        <div style="color:red">
+                                        <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                             @error('image')
                                             {{$message}}
                                             @enderror

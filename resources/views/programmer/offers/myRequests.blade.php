@@ -32,7 +32,7 @@
                                     <option value="buyer_id" {{request('type',old('type'))=='buyer_id'?'selected':''}}>buyer</option>
                                     <option value="price" {{request('type',old('type'))=='price'?'selected':''}}>price</option>
                                 </select>
-                                <div style="color:red">
+                                <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                     @error('type')
                                         {{$message}}
                                     @enderror
@@ -41,7 +41,7 @@
                                 <label for="search" class="block">search ('if you choose price then that mean less than')</label>
                                 <input name="search" value ="{{request('search',old('search'))}}" placeholder="..."
                                  class="form-control mb-3 w-25" type="text"id="search">
-                                <div style="color:red">
+                                <div class="mt-2 text-sm text-red-600 dark:text-red-400">
                                     @error('search')
                                         {{$message}}
                                     @enderror
